@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var networkManager = NetworkSimpsonManager()
+    
     let quoteLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -28,7 +30,7 @@ class ViewController: UIViewController {
         return label
     }()
     
-    let characterImageView: UIImageView = {
+    var characterImageView: UIImageView = {
         let characterImage = UIImageView()
         characterImage.translatesAutoresizingMaskIntoConstraints = false
         return characterImage
@@ -46,14 +48,31 @@ class ViewController: UIViewController {
     }()
     
     @objc func nextCharacterButton(_ sender: UIButton) {
-        fetchData()
+        self.networkManager.fetchData()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .cyan
-        fetchData()
+        networkManager.onCompletion = { [weak self] character in
+            guard let self = self else { return }
+
+            self.updateCharacter(simpsonCharacter: character)
+        }
         setConstraints()
+    }
+    
+    func updateCharacter(simpsonCharacter: CharacterToView) {
+        
+        guard let image = simpsonCharacter.imageCharacter,
+              let urlImage = URL(string: image),
+              let characterImageData = try? Data(contentsOf: urlImage) else { return }
+        
+        DispatchQueue.main.async {
+            self.nameLabel.text = simpsonCharacter.nameCharacter
+            self.quoteLabel.text = simpsonCharacter.quoteCharacter
+            self.characterImageView.image = UIImage(data: characterImageData)
+        }
     }
     
     func setConstraints() {
@@ -83,35 +102,6 @@ class ViewController: UIViewController {
             nextCharacterButton.heightAnchor.constraint(equalToConstant: 100),
             nextCharacterButton.widthAnchor.constraint(equalToConstant: 200),
         ])
-    }
-    
-    
-    let url = "https://thesimpsonsquoteapi.glitch.me/quotes"
-
-    func fetchData(){
-        guard let url = URL(string: url) else { return }
-        URLSession.shared.dataTask(with: url) { (data, _, _) in
-            guard let data = data else { return }
-            print("data: \(data)")
-            
-            do {
-                
-                let result = try JSONDecoder().decode([Character].self, from: data)
-                
-                guard let image = result.first?.image,
-                      let urlImage = URL(string: image),
-                      let characterImageData = try? Data(contentsOf: urlImage) else { return }
-                
-                DispatchQueue.main.sync {
-                    self.quoteLabel.text = result.first?.quote
-                    self.nameLabel.text = result.first?.character
-                    self.characterImageView.image = UIImage(data: characterImageData)
-                }
-                
-            } catch let error {
-                print("Error: \(error)")
-            }
-        }.resume()
     }
 }
 

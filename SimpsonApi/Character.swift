@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Character: Decodable {
+struct Character: Codable {
     let quote: String
     let character: String
-    let image: String
+    let image: String?
 }
