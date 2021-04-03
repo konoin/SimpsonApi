@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  SimpsonApi
 //
-//  Created by Никита Полыко on 1.04.21.
+//  Created by Mikita Palyka on 1.04.21.
 //
 
 import UIKit

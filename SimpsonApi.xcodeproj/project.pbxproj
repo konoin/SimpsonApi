@@ -41,6 +41,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		856D408A261907F1003B975A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				858E11DC261641C700CA1682 /* Character.swift */,
+				856D408726187467003B975A /* CharacterToView.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		856D408B261907FA003B975A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		856D408C261907FE003B975A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				858E11CA26163D0200CA1682 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		856D408D26190804003B975A /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				858E11CF26163D0600CA1682 /* Assets.xcassets */,
+				858E11D126163D0600CA1682 /* LaunchScreen.storyboard */,
+				858E11D426163D0600CA1682 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		856D408E26190838003B975A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				856D408326187165003B975A /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		856D408F26190847003B975A /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				858E11C626163D0200CA1682 /* AppDelegate.swift */,
+				858E11C826163D0200CA1682 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 		858E11BA26163D0100CA1682 = {
 			isa = PBXGroup;
 			children = (
@@ -60,15 +111,12 @@
 		858E11C526163D0100CA1682 /* SimpsonApi */ = {
 			isa = PBXGroup;
 			children = (
-				858E11C626163D0200CA1682 /* AppDelegate.swift */,
-				858E11C826163D0200CA1682 /* SceneDelegate.swift */,
-				858E11CA26163D0200CA1682 /* ViewController.swift */,
-				856D408326187165003B975A /* NetworkManager.swift */,
-				858E11DC261641C700CA1682 /* Character.swift */,
-				856D408726187467003B975A /* CharacterToView.swift */,
-				858E11CF26163D0600CA1682 /* Assets.xcassets */,
-				858E11D126163D0600CA1682 /* LaunchScreen.storyboard */,
-				858E11D426163D0600CA1682 /* Info.plist */,
+				856D408F26190847003B975A /* Application */,
+				856D408E26190838003B975A /* Managers */,
+				856D408A261907F1003B975A /* Model */,
+				856D408B261907FA003B975A /* View */,
+				856D408C261907FE003B975A /* Controller */,
+				856D408D26190804003B975A /* SupportingFiles */,
 			);
 			path = SimpsonApi;
 			sourceTree = "<group>";
