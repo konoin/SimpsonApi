@@ -1,10 +1,3 @@
-//
-//  CharacterToView.swift
-//  SimpsonApi
-//
-//  Created by Mikita Palyka on 3.04.21.
-//
-
 import Foundation
 
 struct CharacterToView {

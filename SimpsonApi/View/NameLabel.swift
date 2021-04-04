@@ -1,0 +1,23 @@
+import Foundation
+import UIKit
+
+class NameLabel: UILabel {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
+        
+    }
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        commonInit()
+    }
+    
+    private func commonInit() {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.text = ""
+        self.textAlignment = .center
+        self.font = .systemFont(ofSize: 13)
+    }
+    
+}

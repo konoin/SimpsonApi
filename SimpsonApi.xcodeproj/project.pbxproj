@@ -11,10 +11,14 @@
 		856D408826187467003B975A /* CharacterToView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856D408726187467003B975A /* CharacterToView.swift */; };
 		858E11C726163D0200CA1682 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858E11C626163D0200CA1682 /* AppDelegate.swift */; };
 		858E11C926163D0200CA1682 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858E11C826163D0200CA1682 /* SceneDelegate.swift */; };
-		858E11CB26163D0200CA1682 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858E11CA26163D0200CA1682 /* ViewController.swift */; };
+		858E11CB26163D0200CA1682 /* SimpsonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858E11CA26163D0200CA1682 /* SimpsonController.swift */; };
 		858E11D026163D0600CA1682 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 858E11CF26163D0600CA1682 /* Assets.xcassets */; };
 		858E11D326163D0600CA1682 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 858E11D126163D0600CA1682 /* LaunchScreen.storyboard */; };
 		858E11DD261641C700CA1682 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858E11DC261641C700CA1682 /* Character.swift */; };
+		859A0E46261A326B00B72D78 /* QuotableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A0E45261A326B00B72D78 /* QuotableLabel.swift */; };
+		859A0E49261A328B00B72D78 /* NameLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A0E48261A328B00B72D78 /* NameLabel.swift */; };
+		859A0E4E261A33DE00B72D78 /* CharacterImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A0E4D261A33DE00B72D78 /* CharacterImageView.swift */; };
+		859A0E51261A34F000B72D78 /* CharacterNextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A0E50261A34F000B72D78 /* CharacterNextButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,11 +27,15 @@
 		858E11C326163D0100CA1682 /* SimpsonApi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpsonApi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		858E11C626163D0200CA1682 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		858E11C826163D0200CA1682 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		858E11CA26163D0200CA1682 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		858E11CA26163D0200CA1682 /* SimpsonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpsonController.swift; sourceTree = "<group>"; };
 		858E11CF26163D0600CA1682 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		858E11D226163D0600CA1682 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		858E11D426163D0600CA1682 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		858E11DC261641C700CA1682 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		859A0E45261A326B00B72D78 /* QuotableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotableLabel.swift; sourceTree = "<group>"; };
+		859A0E48261A328B00B72D78 /* NameLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameLabel.swift; sourceTree = "<group>"; };
+		859A0E4D261A33DE00B72D78 /* CharacterImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterImageView.swift; sourceTree = "<group>"; };
+		859A0E50261A34F000B72D78 /* CharacterNextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterNextButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,10 @@
 		856D408B261907FA003B975A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				859A0E45261A326B00B72D78 /* QuotableLabel.swift */,
+				859A0E48261A328B00B72D78 /* NameLabel.swift */,
+				859A0E4D261A33DE00B72D78 /* CharacterImageView.swift */,
+				859A0E50261A34F000B72D78 /* CharacterNextButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -60,7 +72,7 @@
 		856D408C261907FE003B975A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				858E11CA26163D0200CA1682 /* ViewController.swift */,
+				858E11CA26163D0200CA1682 /* SimpsonController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -112,10 +124,10 @@
 			isa = PBXGroup;
 			children = (
 				856D408F26190847003B975A /* Application */,
-				856D408E26190838003B975A /* Managers */,
 				856D408A261907F1003B975A /* Model */,
 				856D408B261907FA003B975A /* View */,
 				856D408C261907FE003B975A /* Controller */,
+				856D408E26190838003B975A /* Managers */,
 				856D408D26190804003B975A /* SupportingFiles */,
 			);
 			path = SimpsonApi;
@@ -190,11 +202,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				859A0E4E261A33DE00B72D78 /* CharacterImageView.swift in Sources */,
 				856D408426187165003B975A /* NetworkManager.swift in Sources */,
-				858E11CB26163D0200CA1682 /* ViewController.swift in Sources */,
+				858E11CB26163D0200CA1682 /* SimpsonController.swift in Sources */,
 				858E11C726163D0200CA1682 /* AppDelegate.swift in Sources */,
+				859A0E49261A328B00B72D78 /* NameLabel.swift in Sources */,
 				856D408826187467003B975A /* CharacterToView.swift in Sources */,
 				858E11C926163D0200CA1682 /* SceneDelegate.swift in Sources */,
+				859A0E46261A326B00B72D78 /* QuotableLabel.swift in Sources */,
+				859A0E51261A34F000B72D78 /* CharacterNextButton.swift in Sources */,
 				858E11DD261641C700CA1682 /* Character.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,7 +352,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CPF5464MWY;
-				INFOPLIST_FILE = SimpsonApi/Info.plist;
+				INFOPLIST_FILE = SimpsonApi/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -355,7 +371,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CPF5464MWY;
-				INFOPLIST_FILE = SimpsonApi/Info.plist;
+				INFOPLIST_FILE = SimpsonApi/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

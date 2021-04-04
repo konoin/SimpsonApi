@@ -1,10 +1,3 @@
-//
-//  NetworkManager.swift
-//  SimpsonApi
-//
-//  Created by Mikita Palyka on 3.04.21.
-//
-
 import Foundation
 
 class NetworkSimpsonManager {
@@ -30,8 +23,9 @@ class NetworkSimpsonManager {
         let decoder = JSONDecoder()
         
         do {
-            let currentCharacterData = try decoder.decode([Character].self, from: data)[0]
-            guard  let currentCharacter = CharacterToView(characterToView: currentCharacterData) else {
+            let characters = try decoder.decode([Character].self, from: data)
+            guard let firstCharacter = characters.first else { return nil }
+            guard  let currentCharacter = CharacterToView(characterToView: firstCharacter) else {
                 return nil
             }
             return currentCharacter

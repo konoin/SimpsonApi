@@ -1,65 +1,28 @@
-//
-//  ViewController.swift
-//  SimpsonApi
-//
-//  Created by Mikita Palyka on 1.04.21.
-//
-
 import UIKit
 
-class ViewController: UIViewController {
+class SimpsonController: UIViewController {
     
     var networkManager = NetworkSimpsonManager()
     
-    let quoteLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = ""
-        label.textAlignment = .center
-        label.font = .systemFont(ofSize: 13)
-        label.numberOfLines = 0
-        return label
-    }()
+    let quoteLabel: QuoteLabel = QuoteLabel()
+    let nameLabel: NameLabel = NameLabel()
+    let characterImageView: CharacterImageView = CharacterImageView(frame: CGRect())
+    let nextCharacterButton: CharacterNextButton = CharacterNextButton()
     
-    let nameLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = ""
-        label.textAlignment = .center
-        label.font = .systemFont(ofSize: 13)
-        return label
-    }()
-    
-    var characterImageView: UIImageView = {
-        let characterImage = UIImageView()
-        characterImage.translatesAutoresizingMaskIntoConstraints = false
-        return characterImage
-    }()
-    
-    let nextCharacterButton: UIButton = {
-        let button = UIButton()
-        button.addTarget(self, action: #selector(nextCharacterButton(_:)), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Press Me", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .yellow
-        button.layer.cornerRadius = 16
-        return button
-    }()
-    
-    @objc func nextCharacterButton(_ sender: UIButton) {
-        self.networkManager.fetchData()
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .cyan
+        nextCharacterButton.addTarget(self, action: #selector(nextCharacterButton(_:)), for: .touchUpInside)
         networkManager.onCompletion = { [weak self] character in
             guard let self = self else { return }
 
             self.updateCharacter(simpsonCharacter: character)
         }
         setConstraints()
+    }
+    
+    @objc func nextCharacterButton(_ sender: UIButton) {
+        self.networkManager.fetchData()
     }
     
     func updateCharacter(simpsonCharacter: CharacterToView) {
